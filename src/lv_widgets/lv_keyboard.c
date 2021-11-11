@@ -86,10 +86,10 @@ static const lv_btnmatrix_ctrl_t default_kb_ctrl_num_map[] = {
     1, 1, 1, 1, 1
 };
 
-static const char * const default_kb_map_calcule[] = {LV_SYMBOL_BACKSPACE, "/", "*", "-", "\n",
-                                                      "1", "2", "3", "+", "\n",
+static const char * const default_kb_map_calcule[] = {LV_SYMBOL_BACKSPACE, "/", "*", "@", "\n",
+                                                      "7", "8", "9",  "+","\n",
                                                       "4", "5", "6", "=", "\n",
-                                                      "7", "8", "9",  "@","\n",
+                                                      "1", "2", "3", "-", "\n",
                                                       "+/-", "0", ".",  "Enter","\n",
                                                       LV_SYMBOL_CLOSE, LV_SYMBOL_OK, LV_SYMBOL_LEFT, LV_SYMBOL_RIGHT, ""
                                                  };
@@ -102,21 +102,37 @@ static const lv_btnmatrix_ctrl_t default_kb_ctrl_calcule_map[] = {
     1, 1, 1, 1, 
     LV_KEYBOARD_CTRL_BTN_FLAGS | 1, LV_KEYBOARD_CTRL_BTN_FLAGS | 1, 1, 1
 };
+static const char * const default_kb_map_lighting[] = { "Time", "Esc", "7", "8", "9",  "+","\n",
+                                                        "Edit", "Oops","4", "5", "6", "Thru", "\n",
+                                                        "Update", "Clear", "1", "2", "3", "-", "\n",
+                                                        "Store", "Full", "0", ".", "If", "At","\n",
+                                                         LV_SYMBOL_LEFT, LV_SYMBOL_RIGHT, "Please", ""
+                                                 };
+
+static const lv_btnmatrix_ctrl_t default_kb_ctrl_lighting_map[] = {
+    1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1,
+    1, 1, 1, 4
+};
 /* clang-format on */
 
-static const char * * kb_map[5] = {
+static const char * * kb_map[6] = {
     (const char * *)default_kb_map_lc,
     (const char * *)default_kb_map_uc,
     (const char * *)default_kb_map_spec,
     (const char * *)default_kb_map_num,
-    (const char * *)default_kb_map_calcule
+    (const char * *)default_kb_map_calcule,
+    (const char * *)default_kb_map_lighting
 };
-static const lv_btnmatrix_ctrl_t * kb_ctrl[5] = {
+static const lv_btnmatrix_ctrl_t * kb_ctrl[6] = {
     default_kb_ctrl_lc_map,
     default_kb_ctrl_uc_map,
     default_kb_ctrl_spec_map,
     default_kb_ctrl_num_map,
-    default_kb_ctrl_calcule_map
+    default_kb_ctrl_calcule_map,
+    default_kb_ctrl_lighting_map
 };
 
 /**********************
