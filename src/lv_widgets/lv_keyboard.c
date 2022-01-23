@@ -429,6 +429,8 @@ void lv_keyboard_def_event_cb(lv_obj_t * kb, lv_event_t event)
 
     if(strcmp(txt, "Enter") == 0 || strcmp(txt, LV_SYMBOL_NEW_LINE) == 0)
         lv_textarea_add_char(ext->ta, '\n');
+    else if(strcmp(txt, "Please") == 0 || strcmp(txt, LV_SYMBOL_NEW_LINE) == 0)
+        lv_textarea_add_char(ext->ta, '\n');
     else if(strcmp(txt, LV_SYMBOL_LEFT) == 0)
         lv_textarea_cursor_left(ext->ta);
     else if(strcmp(txt, LV_SYMBOL_RIGHT) == 0)
