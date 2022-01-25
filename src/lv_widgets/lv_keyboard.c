@@ -171,6 +171,7 @@ lv_obj_t *lv_keyboard_create(lv_obj_t *par, const lv_obj_t *copy)
 
     /*Initialize the allocated 'ext' */
     ext->ta = NULL;
+    strcpy(ext->lastTxt, "");
     ext->mode = LV_KEYBOARD_MODE_TEXT_LOWER;
     ext->cursor_mng = 0;
 
@@ -247,6 +248,13 @@ void lv_keyboard_set_textarea(lv_obj_t *kb, lv_obj_t *ta)
     {
         lv_textarea_set_cursor_hidden(ext->ta, false);
     }
+}
+
+void lv_keyboard_get_lastTxt(lv_obj_t * kb, char* action)
+{
+    lv_keyboard_ext_t *ext = lv_obj_get_ext_attr(kb);
+    strcpy(action, ext->lastTxt);
+    strcpy(ext->lastTxt, "");
 }
 
 /**
@@ -502,15 +510,11 @@ void lv_keyboard_def_event_cb(lv_obj_t *kb, lv_event_t event)
     else if (lv_keyboard_get_mode(kb) == 5)
     {
         // lv_textarea_add_text(ext->ta, "**youpi**");
-
-        if (strcmp(txt, "Please") == 0)
-            lv_textarea_add_char(ext->ta, '\n');
-        else
-        {
-            lv_textarea_add_text(ext->ta, txt);
-        }
+        strcpy(ext->lastTxt, txt);
     }
 }
+
+
 
 /**********************
  *   STATIC FUNCTIONS

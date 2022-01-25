@@ -51,6 +51,7 @@ typedef uint8_t lv_keyboard_mode_t;
 typedef struct {
     lv_btnmatrix_ext_t btnm; /*Ext. of ancestor*/
     /*New data for this type */
+    char lastTxt[256];
     lv_obj_t * ta;          /*Pointer to the assigned text area*/
     lv_keyboard_mode_t mode;      /*Key map type*/
     uint8_t cursor_mng : 1; /*1: automatically show/hide cursor when a text area is assigned or left*/
@@ -84,6 +85,11 @@ lv_obj_t * lv_keyboard_create(lv_obj_t * par, const lv_obj_t * copy);
  * @param ta pointer to a Text Area object to write there
  */
 void lv_keyboard_set_textarea(lv_obj_t * kb, lv_obj_t * ta);
+
+/**
+// TODO
+ */
+void lv_keyboard_get_lastTxt(lv_obj_t * kb, char* action);
 
 /**
  * Set a new a mode (text or number map)
