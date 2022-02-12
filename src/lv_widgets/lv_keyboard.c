@@ -102,19 +102,19 @@ static const lv_btnmatrix_ctrl_t default_kb_ctrl_calcule_map[] = {
     1, 1, 1, 1, 
     LV_KEYBOARD_CTRL_BTN_FLAGS | 1, LV_KEYBOARD_CTRL_BTN_FLAGS | 1, 1, 1
 };
-static const char * const default_kb_map_lighting[] = { "Time", "Esc", "7", "8", "9",  "+","\n",
-                                                        "Edit", "Oops","4", "5", "6", "Thru", "\n",
-                                                        "Update", "Clear", "1", "2", "3", "-", "\n",
-                                                        "Store", "Full", "0", ".", "If", "At","\n",
-                                                         LV_SYMBOL_LEFT, LV_SYMBOL_RIGHT, "Please", ""
+static const char * const default_kb_map_lighting[] = { "-10", "+10", "7", "8", "9",  "  +", "\n",
+                                                             "Clear", "4", "5", "6", "Thru", "\n",
+                                                              "Half", "1", "2", "3",    "-", "\n",
+                                                              "Full", "0", ".",        "At", "\n",
+                                                              "Zero",     "If",    "Please", ""
                                                  };
 
 static const lv_btnmatrix_ctrl_t default_kb_ctrl_lighting_map[] = {
-    1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1,
-    1, 1, 1, 4
+ 1, 1, 1, 1, 1, 1,
+    2, 1, 1, 1, 1,
+    2, 1, 1, 1, 1,
+    2, 1, 1, 2,
+    2, 2, 2
 };
 /* clang-format on */
 
